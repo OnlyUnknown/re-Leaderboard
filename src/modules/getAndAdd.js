@@ -26,6 +26,5 @@ const get = async () => {
   });
   const list = document.querySelector('ul');
   list.innerHTML = output;
-  console.log(list)
 };
 export { submit, get };

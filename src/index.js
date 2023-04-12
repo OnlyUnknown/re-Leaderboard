@@ -7,7 +7,7 @@ submitForm.addEventListener('submit', (e) => {
   const scoreVal = document.querySelector('.score');
   const nameVal = document.querySelector('.name');
   submit(nameVal.value, scoreVal.value);
-  submitForm.reset()
+  submitForm.reset();
   e.preventDefault();
 });
 
