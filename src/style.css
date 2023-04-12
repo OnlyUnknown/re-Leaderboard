@@ -1,0 +1,50 @@
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.re-button {
+  margin-left: 100px;
+}
+
+.board {
+  display: contents;
+  flex-direction: column;
+  list-style: none;
+  border: black solid 1px;
+}
+
+.board li {
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  width: 300px;
+}
+
+.board li:first-child {
+  border-top: 2px solid black;
+}
+
+.board li:last-child {
+  border-bottom: 2px solid black;
+}
+
+.board li:nth-child(odd) {
+  background-color: antiquewhite;
+}
+
+.submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.submit input {
+  width: 300px;
+  height: 25px;
+  border: black solid 2px;
+}
+
+.submit-but {
+  width: 60px;
+  margin-left: auto;
+}
