@@ -36,29 +36,4 @@
   background-color: antiquewhite;
 }
 
-.submit {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.submit input {
-  margin-bottom: 20px;
-  width: 300px;
-  height: 25px;
-  border: black solid 2px;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
-}
-
-.submit-but {
-  width: 60px;
-  margin-left: auto;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
-  border: 3px solid black;
-  background: wheat;
-}
-
-h1,
-h3 {
-  text-shadow: 1px 1px 2px wheat, 0 0 1em wheat, 0 0 0.2em wheat;
-}
