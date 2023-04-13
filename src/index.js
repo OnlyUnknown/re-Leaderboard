@@ -1,12 +1,18 @@
 import './style.css';
+import { submit, get } from './modules/getAndAdd.js';
 
-function component() {
-  const element = document.createElement('div');
+const submitForm = document.querySelector('.submit');
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = '';
+submitForm.addEventListener('submit', (e) => {
+  const scoreVal = document.querySelector('.score');
+  const nameVal = document.querySelector('.name');
+  submit(nameVal.value, scoreVal.value);
+  submitForm.reset();
+  e.preventDefault();
+});
 
-  return element;
-}
+const refresh = document.querySelector('.re-button');
 
-document.body.appendChild(component());
+refresh.addEventListener('click', get);
+
+get();
