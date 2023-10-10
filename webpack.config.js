@@ -1,30 +1,44 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge'); // Import webpack-merge
 
-module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+// Define your productionConfig
+const productionConfig = merge([
+  {
+    output: {
+      publicPath: "/re-leaderboard", // Adjust the publicPath as needed
+    },
   },
-  devServer: {
-    static: './dist',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
+  // ... other configurations specific to productionConfig
+]);
+
+module.exports = merge(
+  {
+    mode: 'development',
+    entry: './src/index.js',
+    output: {
+      filename: '[name].js',
+      path: path.resolve(__dirname, 'dist'),
+    },
+    devServer: {
+      static: './dist',
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+      }),
     ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
+    },
+    optimization: {
+      runtimeChunk: 'single',
+    },
   },
-  optimization: {
-    runtimeChunk: 'single',
-  },
-};
+  productionConfig // Merge the productionConfig here
+);
